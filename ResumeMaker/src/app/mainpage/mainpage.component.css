@@ -1,0 +1,17 @@
+img {
+    max-width:100%;
+}
+.jumbotron {
+    background-color: white;
+}
+#carouselExampleControls {
+  background-color: #363636;
+  margin-top:20px;
+}
+.header{
+    margin-top: 30px;
+    padding-top: 20px;
+    font-weight: 500 !important;
+    font-size: 30px;
+    text-align: center;
+}
