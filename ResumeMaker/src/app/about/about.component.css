@@ -1,0 +1,23 @@
+.image-cropper {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.aboutContainer {
+    overflow: auto;
+    justify-content: center;
+    margin: 20px;
+    background-color: #212529;
+    color: white;
+    margin: 40px;
+}
+img {
+    margin: 0 auto;
+    height: 100%;
+    width: auto;
+}
+.whiteIcon {
+    color: white;
+}
