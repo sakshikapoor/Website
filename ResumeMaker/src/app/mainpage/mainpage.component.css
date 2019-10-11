@@ -5,7 +5,7 @@ img {
     background-color: white;
 }
 #carouselExampleControls {
-  background-color: #212529;
+  background-color: var(--primary-color);
   margin-top:20px;
 }
 .header{
