@@ -1,0 +1,26 @@
+<div *ngFor="let ed of education; let i = index">
+  <div class="options">
+    <label>College Name: </label>
+    <input [(ngModel)]="ed.name" name="name">
+  </div>
+  <div class="options"> 
+    <label>Specialization: </label>
+    <input [(ngModel)]="ed.specialization" name="specialization">
+  </div>
+  <div class="options">
+    <label>Year: </label>
+    <input [(ngModel)]="ed.year" name="year">
+  </div>
+  <div class="options">
+    <label>Degree: </label>
+    <select [(ngModel)]="ed.degree" name="degree">
+      <option value="Bachelors">Bachelors</option>
+      <option value="Masters">Masters</option>
+      <option value="Phd">Phd</option>
+      <option value="HSC">High School</option>
+      <option value="SSC">Senior Secondary School</option>
+    </select>
+  </div>
+    <input type="button" class="btn btn-dark" (click)="removeEducation(i)" value="Remove"><br>
+</div><br>
+<input type="button" class="btn btn-dark" (click)="addEducation()" value="Click to add Education">

@@ -1,0 +1,15 @@
+<div>
+    <h4>Enter Project Info</h4>
+      <div *ngFor="let work of experience; let i = index">
+        <div>
+          <label>Company:</label> 
+          <input type="text" [(ngModel)]="work.company" name="companyName" >
+          <label>Job Position:</label> 
+          <input type="text" [(ngModel)]="work.position" name="jobPosition">
+          <label>Job Description:</label> 
+          <input type="text" [(ngModel)]="work.description" name="jobDescription">
+        </div>
+      <input type="button" class="btn btn-dark" (click)="removeWork(i)" value="Remove">
+    </div>
+    <input type="button" class="btn btn-dark" (click)="addWork()" value="Add Work">
+  </div>
