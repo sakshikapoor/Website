@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfessionalSkillsComponent implements OnInit {
 
+  skills: any[] = [];
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  addSkill() {
+    this.skills.push({});
+  }
+
+  removeSkill(i) {
+    this.skills.splice(i, 1);
+  }
 }

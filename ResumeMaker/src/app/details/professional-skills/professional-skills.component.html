@@ -1,3 +1,12 @@
-<p>
-  professional-skills works!
-</p>
+  <div *ngFor="let sk of skills; let sk = index">
+      <div class="options">
+        <label class="col-lg-6 col-md-6 col-sm-12 col-xs-12" >Skill: </label>
+        <input [(ngModel)]="sk.skill" name="skill" class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+      </div>
+      <div class="options"> 
+        <label class="col-lg-6 col-md-6 col-sm-12 col-xs-12">Rate Yourself: </label>
+        <input [(ngModel)]="sk.rate" name="rate" type="range" min="1" max="100" value="50" class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+      </div>
+        <input type="button" class="btn btn-dark" (click)="removeSkill(sk)" value="Remove"><br>
+    </div><br>
+    <input type="button" class="btn btn-dark" (click)="addSkill()" value="Click to add Skill">

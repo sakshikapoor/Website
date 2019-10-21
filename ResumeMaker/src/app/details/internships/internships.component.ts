@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InternshipsComponent implements OnInit {
 
+  internships: any[] = [];
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  addInternships() {
+    this.internships.push({});
+  }
+
+  removeInternships(i) {
+    this.internships.splice(i, 1);
   }
 
 }

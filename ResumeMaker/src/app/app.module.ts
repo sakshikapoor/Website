@@ -9,6 +9,24 @@ import { AboutComponent } from './about/about.component';
 import { BuildComponent } from './build/build.component';
 import { AddContentComponent } from './add-content/add-content.component';
 import { AlertModule } from 'ngx-bootstrap';
+import { FormsModule } from '@angular/forms';
+import { BasicInfoComponent } from './details/basic-info/basic-info.component';
+import { AboutMeComponent } from './details/about-me/about-me.component';
+import { ProfilePicComponent } from './details/profile-pic/profile-pic.component';
+import { EducationComponent } from './details/education/education.component';
+import { ContactInfoComponent } from './details/contact-info/contact-info.component';
+import { ProjectsUndertakenComponent } from './details/projects-undertaken/projects-undertaken.component';
+import { HobbiesComponent } from './details/hobbies/hobbies.component';
+import { WorkExperienceComponent } from './details/work-experience/work-experience.component';
+import { InternshipsComponent } from './details/internships/internships.component';
+import { LanguagesComponent } from './details/languages/languages.component';
+import { ProfessionalSkillsComponent } from './details/professional-skills/professional-skills.component';
+import { SoftwaresComponent } from './details/softwares/softwares.component';
+import { CareerObjectiveComponent } from './details/career-objective/career-objective.component';
+import { WebsiteComponent } from './details/website/website.component';
+import { OtherAccomplishmentsComponent } from './details/other-accomplishments/other-accomplishments.component';
+import { CertificationsComponent } from './details/certifications/certifications.component';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -17,14 +35,31 @@ import { AlertModule } from 'ngx-bootstrap';
     MainpageComponent,
     AboutComponent,
     BuildComponent,
-    AddContentComponent
+    AddContentComponent,
+    BasicInfoComponent,
+    AboutMeComponent,
+    ProfilePicComponent,
+    EducationComponent,
+    ContactInfoComponent,
+    ProjectsUndertakenComponent,
+    HobbiesComponent,
+    WorkExperienceComponent,
+    InternshipsComponent,
+    LanguagesComponent,
+    ProfessionalSkillsComponent,
+    SoftwaresComponent,
+    CareerObjectiveComponent,
+    WebsiteComponent,
+    OtherAccomplishmentsComponent,
+    CertificationsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AlertModule.forRoot(),
+    FormsModule,
   ],
-  providers: [],
+  providers: [ CookieService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

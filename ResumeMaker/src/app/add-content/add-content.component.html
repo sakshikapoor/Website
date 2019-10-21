@@ -1,94 +1,92 @@
-<div class="container options">
-  <div class="row" align="center">
+<div class="jumbotron container options">
+    <span class="optionsHeading">Select all the contents you want to add:</span>
+  <div class="row">
   <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-    <div data-toggle="buttons">
+    <div>
       <div>
         <label class="btn btn-info">
-          <input type="checkbox" checked autocomplete="off" value=0 id="cb" name="cb[]"> About Me
+          <input type="checkbox"  [(ngModel)]="resumeOptions.aboutMe"> About Me
         </label>
       </div>
       <div>
         <label class="btn btn-info">
-          <input type="checkbox" autocomplete="off" value=1 id="cb" name="cb[]"> Profile Pic
+          <input type="checkbox"  [(ngModel)]="resumeOptions.profilePic"> Profile Pic
         </label>
       </div>
       <div>
         <label class="btn btn-info">
-          <input type="checkbox" autocomplete="off" value=2 id="cb"  name="cb[]"> Education
+          <input type="checkbox"  [(ngModel)]="resumeOptions.education"> Education
         </label>
       </div>
       <div>
         <label class="btn btn-info">
-          <input type="checkbox" autocomplete="off" value=3 id="cb" name="cb[]"> Contact Info
+          <input type="checkbox"  [(ngModel)]="resumeOptions.contactInfo" > Contact Info
         </label>
       </div>
       <div>
       <label class="btn btn-info">
-        <input type="checkbox" autocomplete="off" value=4 id="cb" name="cb[]"> Projects Undertaken
+        <input type="checkbox"  [(ngModel)]="resumeOptions.projectsUndertaken" > Projects Undertaken
       </label>
       </div>
     </div>
   </div>
 
   <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-    <div data-toggle="buttons">
         <div>
           <label class="btn btn-info">
-            <input type="checkbox" autocomplete="off" id="cb" value=5 name="cb[]"> Hobbies
+            <input type="checkbox"  [(ngModel)]="resumeOptions.hobbies"> Hobbies
           </label>
         </div>
         <div>
           <label class="btn btn-info">
-            <input type="checkbox" autocomplete="off" id="cb" value=6 name="cb[]"> Work Experience
+            <input type="checkbox"  [(ngModel)]="resumeOptions.workExperience"> Work Experience
           </label>
         </div>
         <div>
           <label class="btn btn-info">
-            <input type="checkbox" autocomplete="off" id="cb" value=7 name="cb[]"> Internships
+            <input type="checkbox"  [(ngModel)]="resumeOptions.internships"> Internships
           </label>
         </div>
         <div>
           <label class="btn btn-info">
-            <input type="checkbox" autocomplete="off" id="cb" value=8 name="cb[]"> Languages
+            <input type="checkbox"  [(ngModel)]="resumeOptions.languages"> Languages
           </label>
         </div>
         <div>
           <label class="btn btn-info">
-            <input type="checkbox" autocomplete="off" value=9 id="cb" name="cb[]"> Professional Skills
+            <input type="checkbox"  [(ngModel)]="resumeOptions.professionalSkills"> Professional Skills
           </label>
         </div>
       </div>
-  </div>
 
   <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-    <div data-toggle="buttons">
         <div>
           <label class="btn btn-info">
-            <input type="checkbox"   autocomplete="off" id="cb" value=10 name="cb[]"> Softwares
+            <input type="checkbox"    [(ngModel)]="resumeOptions.softwaresKnown"> Softwares
           </label>
         </div>
         <div>
           <label class="btn btn-info">
-            <input type="checkbox" autocomplete="off" id="cb" value=11 name="cb[]"> Career Objective
+            <input type="checkbox"  [(ngModel)]="resumeOptions.careerObjective"> Career Objective
           </label>
         </div>
         <div>
           <label class="btn btn-info">
-            <input type="checkbox" autocomplete="off" id="cb" value=12 name="cb[]"> Website
+            <input type="checkbox"  [(ngModel)]="resumeOptions.website"> Website
           </label>
         </div>
         <div>
           <label class="btn btn-info">
-            <input type="checkbox" autocomplete="off" id="cb" value=13 name="cb[]"> Other Accomplishments
+            <input type="checkbox"  [(ngModel)]="resumeOptions.otherAccomplishments"> Other Accomplishments
           </label>
         </div>
         <div>
           <label class="btn btn-info">
-            <input type="checkbox" autocomplete="off" id="cb" value=14 name="cb[]"> Certifications
+            <input type="checkbox"  [(ngModel)]="resumeOptions.certifications"> Certifications
           </label>
         </div>
-      </div>
-      <button type="submit" value="submit" class="btn" id="next">Next</button>
+     
+      <button type="submit" value="submit" class="btn nextButton" (click)="nextButton()" routerLink="/build">Next</button>
   </div>
   </div>
 </div>

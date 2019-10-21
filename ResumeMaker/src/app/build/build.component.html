@@ -1,3 +1,46 @@
-<p>
-  build works!
-</p>
+<div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <div class="jumbotron">
+            <ul class="list-group">
+                <button type="button" class="list-group-item list-group-item-action" [ngClass]="resumeOptions?.basicInfo?'displayFull':'displayNone'" (click)="show('basicInfo')">Basic Info</button>
+                <button type="button" class="list-group-item list-group-item-action" [ngClass]="resumeOptions?.aboutMe?'displayFull':'displayNone'" (click)="show('aboutMe')">About Me</button>
+                <button type="button" class="list-group-item list-group-item-action" [ngClass]="resumeOptions?.profilePic?'displayFull':'displayNone'" (click)="show('profilePic')">Profile Pic</button>
+                <button type="button" class="list-group-item list-group-item-action" [ngClass]="resumeOptions?.education?'displayFull':'displayNone'" (click)="show('education')">Education</button>
+                <button type="button" class="list-group-item list-group-item-action" [ngClass]="resumeOptions?.contactInfo?'displayFull':'displayNone'" (click)="show('contactInfo')">Contact Info  </button>
+                <button type="button" class="list-group-item list-group-item-action" [ngClass]="resumeOptions?.projectsUndertaken?'displayFull':'displayNone'" (click)="show('projectsUndertaken')">Projects Undertaken</button>
+                <button type="button" class="list-group-item list-group-item-action" [ngClass]="resumeOptions?.hobbies?'displayFull':'displayNone'" (click)="show('hobbies')">Hobbies</button>
+                <button type="button" class="list-group-item list-group-item-action" [ngClass]="resumeOptions?.workExperience?'displayFull':'displayNone'" (click)="show('workExperience')">Work Experience</button>
+                <button type="button" class="list-group-item list-group-item-action" [ngClass]="resumeOptions?.internships?'displayFull':'displayNone'" (click)="show('internships')">Internships</button>
+                <button type="button" class="list-group-item list-group-item-action" [ngClass]="resumeOptions?.languages?'displayFull':'displayNone'" (click)="show('languages')">Languages</button>
+                <button type="button" class="list-group-item list-group-item-action" [ngClass]="resumeOptions?.professionalSkills?'displayFull':'displayNone'" (click)="show('professionalSkills')">Professional Skills</button>
+                <button type="button" class="list-group-item list-group-item-action" [ngClass]="resumeOptions?.softwares?'displayFull':'displayNone'" (click)="show('softwares')">Softwares</button>
+                <button type="button" class="list-group-item list-group-item-action" [ngClass]="resumeOptions?.careerObjective?'displayFull':'displayNone'" (click)="show('careerObjective')">Career Objective</button>
+                <button type="button" class="list-group-item list-group-item-action" [ngClass]="resumeOptions?.website?'displayFull':'displayNone'" (click)="show('website')">Website</button>
+                <button type="button" class="list-group-item list-group-item-action" [ngClass]="resumeOptions?.otherAccomplishments?'displayFull':'displayNone'" (click)="show('otherAccomplishments')">Other Accomplishments</button>
+                <button type="button" class="list-group-item list-group-item-action" [ngClass]="resumeOptions?.certifications?'displayFull':'displayNone'" (click)="show('certifications')">Certifications</button>
+            </ul>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+          <div class="jumbotron">
+             <app-basic-info *ngIf="addDetails.basicInfo"></app-basic-info>
+             <app-about-me *ngIf="addDetails.aboutMe"></app-about-me>
+             <app-profile-pic *ngIf="addDetails.profilePic"></app-profile-pic>
+             <app-education *ngIf="addDetails.education"></app-education>
+             <app-contact-info *ngIf="addDetails.contactInfo"></app-contact-info>
+             <app-projects-undertaken *ngIf="addDetails.projectsUndertaken"></app-projects-undertaken>
+             <app-work-experience *ngIf="addDetails.workExperience"></app-work-experience>
+             <app-hobbies *ngIf="addDetails.hobbies"></app-hobbies>
+             <app-internships *ngIf="addDetails.internships"></app-internships>
+             <app-languages *ngIf="addDetails.languages"></app-languages>
+             <app-professional-skills *ngIf="addDetails.professionalSkills"></app-professional-skills>
+             <app-softwares *ngIf="addDetails.softwares"></app-softwares>
+             <app-career-objective *ngIf="addDetails.careerObjective"></app-career-objective>
+             <app-website *ngIf="addDetails.website"></app-website>
+             <app-other-accomplishments *ngIf="addDetails.otherAccomplishments"></app-other-accomplishments>
+             <app-certifications *ngIf="addDetails.certifications"></app-certifications>
+          </div>
+      </div>
+    </div>
+</div>

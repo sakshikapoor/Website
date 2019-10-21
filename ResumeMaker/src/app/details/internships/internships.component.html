@@ -1,3 +1,12 @@
-<p>
-  internships works!
-</p>
+<div *ngFor="let i of internships; let i = index">
+  <div class="options">
+    <label>Company/ Institution Name: </label>
+    <input [(ngModel)]="i.name" name="name">
+  </div>
+  <div class="options"> 
+    <label>Job Responsibilities/ Description: </label>
+    <input [(ngModel)]="i.description" name="description">
+  </div>
+    <input type="button" class="btn btn-dark" (click)="removeInternships(i)" value="Remove"><br>
+</div><br>
+<input type="button" class="btn btn-dark" (click)="addInternships()" value="Click to add Internships">
