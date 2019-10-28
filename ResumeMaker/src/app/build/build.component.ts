@@ -46,6 +46,25 @@ export class BuildComponent implements OnInit {
     website : false,
     workExperience : false,
   };
+  okTick: ResumeOptions = {
+    basicInfo : false,
+    aboutMe : false,
+    careerObjective : false,
+    contactInfo : false,
+    internships : false,
+    hobbies : false,
+    education : false,
+    certifications : false,
+    languages : false,
+    otherAccomplishments : false,
+    professionalSkills : false,
+    profilePic : false,
+    projectsUndertaken : false,
+    softwaresKnown : false,
+    website : false,
+    workExperience : false,
+  };
+  dataFed = true;
 
   constructor(private addContentOptionsService: AddContentOptionsService, cookie: CookieService) {
     console.log('constructor');

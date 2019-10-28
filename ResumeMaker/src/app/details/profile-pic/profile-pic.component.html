@@ -2,3 +2,7 @@
 <span style="color:red;" *ngIf="message">{{message}}</span>
 <input class="btn btn-dark" #file type="file" accept='image/*' (change)="preview(file.files)" />
 <img [src]="imgURL" height="200" *ngIf="imgURL">
+<div>
+    <br>
+    <input type="button" class="btn btn-dark continue-button"  value="continue">
+</div>

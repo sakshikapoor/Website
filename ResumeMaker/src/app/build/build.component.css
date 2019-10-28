@@ -12,3 +12,6 @@
     overflow-y:scroll;
     height:450px; 
 }
+.ok-tick {
+    float: right;
+}

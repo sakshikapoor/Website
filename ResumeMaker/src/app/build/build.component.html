@@ -3,22 +3,22 @@
       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
         <div class="jumbotron">
             <ul class="list-group">
-                <button type="button" class="list-group-item list-group-item-action" [ngClass]="resumeOptions?.basicInfo?'displayFull':'displayNone'" (click)="show('basicInfo')">Basic Info</button>
-                <button type="button" class="list-group-item list-group-item-action" [ngClass]="resumeOptions?.aboutMe?'displayFull':'displayNone'" (click)="show('aboutMe')">About Me</button>
-                <button type="button" class="list-group-item list-group-item-action" [ngClass]="resumeOptions?.profilePic?'displayFull':'displayNone'" (click)="show('profilePic')">Profile Pic</button>
-                <button type="button" class="list-group-item list-group-item-action" [ngClass]="resumeOptions?.education?'displayFull':'displayNone'" (click)="show('education')">Education</button>
-                <button type="button" class="list-group-item list-group-item-action" [ngClass]="resumeOptions?.contactInfo?'displayFull':'displayNone'" (click)="show('contactInfo')">Contact Info  </button>
-                <button type="button" class="list-group-item list-group-item-action" [ngClass]="resumeOptions?.projectsUndertaken?'displayFull':'displayNone'" (click)="show('projectsUndertaken')">Projects Undertaken</button>
-                <button type="button" class="list-group-item list-group-item-action" [ngClass]="resumeOptions?.hobbies?'displayFull':'displayNone'" (click)="show('hobbies')">Hobbies</button>
-                <button type="button" class="list-group-item list-group-item-action" [ngClass]="resumeOptions?.workExperience?'displayFull':'displayNone'" (click)="show('workExperience')">Work Experience</button>
-                <button type="button" class="list-group-item list-group-item-action" [ngClass]="resumeOptions?.internships?'displayFull':'displayNone'" (click)="show('internships')">Internships</button>
-                <button type="button" class="list-group-item list-group-item-action" [ngClass]="resumeOptions?.languages?'displayFull':'displayNone'" (click)="show('languages')">Languages</button>
-                <button type="button" class="list-group-item list-group-item-action" [ngClass]="resumeOptions?.professionalSkills?'displayFull':'displayNone'" (click)="show('professionalSkills')">Professional Skills</button>
-                <button type="button" class="list-group-item list-group-item-action" [ngClass]="resumeOptions?.softwares?'displayFull':'displayNone'" (click)="show('softwares')">Softwares</button>
-                <button type="button" class="list-group-item list-group-item-action" [ngClass]="resumeOptions?.careerObjective?'displayFull':'displayNone'" (click)="show('careerObjective')">Career Objective</button>
-                <button type="button" class="list-group-item list-group-item-action" [ngClass]="resumeOptions?.website?'displayFull':'displayNone'" (click)="show('website')">Website</button>
-                <button type="button" class="list-group-item list-group-item-action" [ngClass]="resumeOptions?.otherAccomplishments?'displayFull':'displayNone'" (click)="show('otherAccomplishments')">Other Accomplishments</button>
-                <button type="button" class="list-group-item list-group-item-action" [ngClass]="resumeOptions?.certifications?'displayFull':'displayNone'" (click)="show('certifications')">Certifications</button>
+                <button type="button" class="list-group-item list-group-item-action" [ngClass]="resumeOptions?.basicInfo?'displayFull':'displayNone'" (click)="show('basicInfo')">Basic Info<i class="fa fa-check-circle ok-tick" [ngClass]="okTick?.basicInfo?'displayFull':'displayNone'" ></i></button>
+                <button type="button" class="list-group-item list-group-item-action" [ngClass]="resumeOptions?.aboutMe?'displayFull':'displayNone'" (click)="show('aboutMe')">About Me<i class="fa fa-check-circle ok-tick"></i></button>
+                <button type="button" class="list-group-item list-group-item-action" [ngClass]="resumeOptions?.profilePic?'displayFull':'displayNone'" (click)="show('profilePic')">Profile Pic<i class="fa fa-check-circle ok-tick"></i></button>
+                <button type="button" class="list-group-item list-group-item-action" [ngClass]="resumeOptions?.education?'displayFull':'displayNone'" (click)="show('education')">Education<i class="fa fa-check-circle ok-tick"></i></button>
+                <button type="button" class="list-group-item list-group-item-action" [ngClass]="resumeOptions?.contactInfo?'displayFull':'displayNone'" (click)="show('contactInfo')">Contact Info <i class="fa fa-check-circle ok-tick"></i> </button>
+                <button type="button" class="list-group-item list-group-item-action" [ngClass]="resumeOptions?.projectsUndertaken?'displayFull':'displayNone'" (click)="show('projectsUndertaken')">Projects Undertaken<i class="fa fa-check-circle ok-tick"></i></button>
+                <button type="button" class="list-group-item list-group-item-action" [ngClass]="resumeOptions?.hobbies?'displayFull':'displayNone'" (click)="show('hobbies')">Hobbies<i class="fa fa-check-circle ok-tick"></i></button>
+                <button type="button" class="list-group-item list-group-item-action" [ngClass]="resumeOptions?.workExperience?'displayFull':'displayNone'" (click)="show('workExperience')">Work Experience<i class="fa fa-check-circle ok-tick"></i></button>
+                <button type="button" class="list-group-item list-group-item-action" [ngClass]="resumeOptions?.internships?'displayFull':'displayNone'" (click)="show('internships')">Internships<i class="fa fa-check-circle ok-tick"></i></button>
+                <button type="button" class="list-group-item list-group-item-action" [ngClass]="resumeOptions?.languages?'displayFull':'displayNone'" (click)="show('languages')">Languages<i class="fa fa-check-circle ok-tick"></i></button>
+                <button type="button" class="list-group-item list-group-item-action" [ngClass]="resumeOptions?.professionalSkills?'displayFull':'displayNone'" (click)="show('professionalSkills')">Professional Skills<i class="fa fa-check-circle ok-tick"></i></button>
+                <button type="button" class="list-group-item list-group-item-action" [ngClass]="resumeOptions?.softwares?'displayFull':'displayNone'" (click)="show('softwares')">Softwares<i class="fa fa-check-circle ok-tick"></i></button>
+                <button type="button" class="list-group-item list-group-item-action" [ngClass]="resumeOptions?.careerObjective?'displayFull':'displayNone'" (click)="show('careerObjective')">Career Objective<i class="fa fa-check-circle ok-tick"></i></button>
+                <button type="button" class="list-group-item list-group-item-action" [ngClass]="resumeOptions?.website?'displayFull':'displayNone'" (click)="show('website')">Website<i class="fa fa-check-circle ok-tick"></i></button>
+                <button type="button" class="list-group-item list-group-item-action" [ngClass]="resumeOptions?.otherAccomplishments?'displayFull':'displayNone'" (click)="show('otherAccomplishments')">Other Accomplishments<i class="fa fa-check-circle ok-tick"></i></button>
+                <button type="button" class="list-group-item list-group-item-action" [ngClass]="resumeOptions?.certifications?'displayFull':'displayNone'" (click)="show('certifications')">Certifications<i class="fa fa-check-circle ok-tick"></i></button>
             </ul>
         </div>
       </div>
