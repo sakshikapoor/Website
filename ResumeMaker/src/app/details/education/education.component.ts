@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BuildComponent } from '../../build/build.component';
 
 @Component({
   selector: 'app-education',
@@ -9,7 +10,7 @@ export class EducationComponent implements OnInit {
 
   education: any[] = [];
 
-  constructor() { }
+  constructor(private buildComponent: BuildComponent) { }
 
   ngOnInit() {
   }
@@ -22,4 +23,7 @@ export class EducationComponent implements OnInit {
     this.education.splice(i, 1);
   }
 
+  continue() {
+    this.buildComponent.okTick.education = true;
+  }
 }

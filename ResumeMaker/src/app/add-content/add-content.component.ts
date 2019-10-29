@@ -38,4 +38,14 @@ export class AddContentComponent implements OnInit {
   nextButton() {
     this.addContentOptionsService.passOptions(this.resumeOptions);
   }
+
+  selectAll(cb) {
+    if (cb.checked === true) {
+      Object.keys(this.resumeOptions).forEach(v => this.resumeOptions[v] = true);
+    } else {
+      console.log(cb);
+      Object.keys(this.resumeOptions).forEach(v => this.resumeOptions[v] = false);
+      this.resumeOptions.basicInfo = true;
+    }
+  }
 }

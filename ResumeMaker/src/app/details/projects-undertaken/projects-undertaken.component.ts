@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BuildComponent } from '../../build/build.component';
 
 @Component({
   selector: 'app-projects-undertaken',
@@ -9,7 +10,7 @@ export class ProjectsUndertakenComponent implements OnInit {
 
   projects: any[] = [];
 
-  constructor() { }
+  constructor(private buildComponent: BuildComponent) { }
 
   ngOnInit() {
   }
@@ -22,4 +23,7 @@ export class ProjectsUndertakenComponent implements OnInit {
     this.projects.splice(i, 1);
   }
 
+  continue() {
+    this.buildComponent.okTick.projectsUndertaken = true;
+  }
 }

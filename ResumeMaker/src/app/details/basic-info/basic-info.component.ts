@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BuildComponent } from '../../build/build.component';
 
 @Component({
   selector: 'app-basic-info',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BasicInfoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private buildComponent: BuildComponent) { }
 
   ngOnInit() {
+  }
+
+  continue() {
+    this.buildComponent.okTick.basicInfo = true;
   }
 
 }

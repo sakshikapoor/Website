@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BuildComponent } from '../../build/build.component';
 
 @Component({
   selector: 'app-website',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WebsiteComponent implements OnInit {
 
-  constructor() { }
+  constructor(private buildComponent: BuildComponent) { }
 
   ngOnInit() {
   }
 
+  continue() {
+    this.buildComponent.okTick.website = true;
+  }
 }

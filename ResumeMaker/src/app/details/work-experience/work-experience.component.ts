@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BuildComponent } from '../../build/build.component';
 
 @Component({
   selector: 'app-work-experience',
@@ -9,7 +10,7 @@ export class WorkExperienceComponent implements OnInit {
 
   experience: any[] = [];
 
-  constructor() { }
+  constructor(private buildComponent: BuildComponent) { }
 
   ngOnInit() {
   }
@@ -20,5 +21,9 @@ export class WorkExperienceComponent implements OnInit {
 
   removeWork(i) {
     this.experience.splice(i, 1);
+  }
+
+  continue() {
+    this.buildComponent.okTick.workExperience = true;
   }
 }

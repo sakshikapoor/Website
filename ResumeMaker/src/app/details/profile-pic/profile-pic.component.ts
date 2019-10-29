@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BuildComponent } from '../../build/build.component';
 
 @Component({
   selector: 'app-profile-pic',
@@ -11,7 +12,7 @@ export class ProfilePicComponent implements OnInit {
   imgURL: any;
   message: string;
 
-  constructor() { }
+  constructor(private buildComponent: BuildComponent) { }
 
   ngOnInit() { }
 
@@ -32,6 +33,10 @@ export class ProfilePicComponent implements OnInit {
     reader.onload = (event) => {
       this.imgURL = reader.result;
     };
+  }
+
+  continue() {
+    this.buildComponent.okTick.profilePic = true;
   }
 
 }

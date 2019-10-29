@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BuildComponent } from '../../build/build.component';
 
 @Component({
   selector: 'app-internships',
@@ -9,7 +10,7 @@ export class InternshipsComponent implements OnInit {
 
   internships: any[] = [];
 
-  constructor() { }
+  constructor(private buildComponent: BuildComponent) { }
 
   ngOnInit() {
   }
@@ -20,6 +21,10 @@ export class InternshipsComponent implements OnInit {
 
   removeInternships(i) {
     this.internships.splice(i, 1);
+  }
+
+  continue() {
+    this.buildComponent.okTick.internships = true;
   }
 
 }

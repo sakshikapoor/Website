@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BuildComponent } from '../../build/build.component';
 
 @Component({
   selector: 'app-professional-skills',
@@ -9,7 +10,7 @@ export class ProfessionalSkillsComponent implements OnInit {
 
   skills: any[] = [];
 
-  constructor() { }
+  constructor(private buildComponent: BuildComponent) { }
 
   ngOnInit() {
   }
@@ -20,5 +21,9 @@ export class ProfessionalSkillsComponent implements OnInit {
 
   removeSkill(i) {
     this.skills.splice(i, 1);
+  }
+
+  continue() {
+    this.buildComponent.okTick.professionalSkills = true;
   }
 }
