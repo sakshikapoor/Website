@@ -10,6 +10,7 @@ import { BuildComponent } from './build/build.component';
 import { AddContentComponent } from './add-content/add-content.component';
 import { AlertModule } from 'ngx-bootstrap';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { BasicInfoComponent } from './details/basic-info/basic-info.component';
 import { AboutMeComponent } from './details/about-me/about-me.component';
 import { ProfilePicComponent } from './details/profile-pic/profile-pic.component';
@@ -58,6 +59,7 @@ import { CookieService } from 'ngx-cookie-service';
     AppRoutingModule,
     AlertModule.forRoot(),
     FormsModule,
+    ReactiveFormsModule
   ],
   providers: [ CookieService ],
   bootstrap: [AppComponent]

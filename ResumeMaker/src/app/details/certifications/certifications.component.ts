@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BuildComponent } from '../../build/build.component';
+import { CookieService } from 'ngx-cookie-service';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-certifications',
@@ -9,8 +11,13 @@ import { BuildComponent } from '../../build/build.component';
 export class CertificationsComponent implements OnInit {
 
   certifications: any[] = [];
+  certificationsForm = new FormGroup({
+    certificationContent: new FormControl(''),
+    companyContent: new FormControl(''),
+    yearContent: new FormControl(''),
+  });
 
-  constructor(private buildComponent: BuildComponent) { }
+  constructor(private buildComponent: BuildComponent, private cookie: CookieService) { }
 
   ngOnInit() {
   }
@@ -25,6 +32,7 @@ export class CertificationsComponent implements OnInit {
   }
 
   continue() {
+    this.cookie.set('certifications', JSON.stringify(this.certificationsForm.value));
     this.buildComponent.okTick.certifications = true;
   }
 

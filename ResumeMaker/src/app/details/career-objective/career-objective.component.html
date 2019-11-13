@@ -1,6 +1,6 @@
-<div id="CareerObj" class="tabcontent" >
+<div id="CareerObj" class="tabcontent" [formGroup]="careerObjectiveForm">
       <h4>Describe your Career Objective</h4><br>
-      <textarea class="form-control" rows="5" placeholder="Pitch your career objective in 150 characters" style="max-width:500px;"></textarea>
+      <textarea class="form-control" rows="5" formControlName="careerObjectiveContent" placeholder="Pitch your career objective in 150 characters" style="max-width:500px;"></textarea>
       <div>
             <br>
             <input type="button" class="btn btn-dark continue-button"  (click)="continue()" value="continue">

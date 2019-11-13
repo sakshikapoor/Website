@@ -1,7 +1,7 @@
 <div class="jumbotron">
 <h4>Professional Summary</h4>
-<div class="form-group">
-    <textarea class="form-control" rows="3"></textarea>
+<div class="form-group" [formGroup]="aboutMeForm">
+    <textarea class="form-control" rows="3" formControlName="aboutMeContent"></textarea>
 </div>
 <div>
     <br>

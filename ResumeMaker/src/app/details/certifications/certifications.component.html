@@ -1,21 +1,22 @@
-<div *ngFor="let c of certifications; let c = index">
-    <div class="options">
-      <label class="col-lg-6 col-md-6 col-sm-12 col-xs-12">Certification: </label>
-      <input class="col-lg-6 col-md-6 col-sm-12 col-xs-12" [(ngModel)]="c.certification" name="certification" >
-    </div>
-    <div class="options"> 
-      <label class="col-lg-6 col-md-6 col-sm-12 col-xs-12">Company/Institute:</label>
-      <input class="col-lg-6 col-md-6 col-sm-12 col-xs-12" [(ngModel)]="c.institute" name="institute">
-    </div>
-    <div class="options">
-      <label class="col-lg-6 col-md-6 col-sm-12 col-xs-12">Year: </label>
-      <input class="col-lg-6 col-md-6 col-sm-12 col-xs-12" [(ngModel)]="c.year" name="year">
-    </div>
-   
+<div [formGroup]="certificationsForm">
+  <div *ngFor="let c of certifications; let c = index">
+      <div class="options">
+        <label class="col-lg-6 col-md-6 col-sm-12 col-xs-12">Certification: </label>
+        <input class="col-lg-6 col-md-6 col-sm-12 col-xs-12" formControlName="certificationContent" [(ngModel)]="c.certification" name="certification" >
+      </div>
+      <div class="options"> 
+        <label class="col-lg-6 col-md-6 col-sm-12 col-xs-12">Company/Institute:</label>
+        <input class="col-lg-6 col-md-6 col-sm-12 col-xs-12" formControlName="companyContent" [(ngModel)]="c.institute" name="institute">
+      </div>
+      <div class="options">
+        <label class="col-lg-6 col-md-6 col-sm-12 col-xs-12">Year: </label>
+        <input class="col-lg-6 col-md-6 col-sm-12 col-xs-12" formControlName="yearContent" [(ngModel)]="c.year" name="year">
+      </div>
       <input type="button" class="btn btn-dark" (click)="removeCertification(c)" value="Remove">
+  </div>
+    <input type="button" class="btn btn-dark" (click)="addCertification()" value="Click to add Certification">
+    <div>
+        <br>
+        <input type="button" class="btn btn-dark continue-button" (click)="continue()" value="continue">
     </div>
-  <input type="button" class="btn btn-dark" (click)="addCertification()" value="Click to add Certification">
-  <div>
-      <br>
-      <input type="button" class="btn btn-dark continue-button" (click)="continue()" value="continue">
-    </div>
+</div>

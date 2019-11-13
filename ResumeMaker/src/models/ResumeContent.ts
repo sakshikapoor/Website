@@ -1,11 +1,11 @@
 export class ResumeContent {
-    content : {
-        basicInfo : {
+    content: {
+        basicInfo: {
                 firstName: string;
                 lastName: string;
                 email: string;
         },
-        aboutMe : string,
+        aboutMe: string,
         profilePic: string;
         education: {
             collegeName: string;
