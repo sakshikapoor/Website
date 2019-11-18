@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BuildComponent } from '../../build/build.component';
-import { CookieService } from 'ngx-cookie-service';
 import { FormControl, FormGroup } from '@angular/forms';
+import { TransferDataService } from '../../services/transfer-data.service';
 
 @Component({
   selector: 'app-career-objective',
@@ -14,7 +14,7 @@ export class CareerObjectiveComponent implements OnInit {
     careerObjectiveContent: new FormControl(''),
   });
 
-  constructor(private buildComponent: BuildComponent, private cookie: CookieService) { }
+  constructor(private buildComponent: BuildComponent, private transferDataService: TransferDataService) { }
 
   ngOnInit() {
   }
@@ -23,8 +23,8 @@ export class CareerObjectiveComponent implements OnInit {
     if (this.careerObjectiveForm.get('careerObjectiveContent').value === '' ) {
       alert('please fill in the required contents');
     } else {
-      this.cookie.set('careerObjective', JSON.stringify(this.careerObjectiveForm.value));
       this.buildComponent.okTick.careerObjective = true;
+      this.transferDataService.setData(this.careerObjectiveForm.value);
     }
   }
 }

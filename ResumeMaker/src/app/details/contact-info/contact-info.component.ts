@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BuildComponent } from '../../build/build.component';
+import { TransferDataService } from '../../services/transfer-data.service';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-contact-info',
@@ -8,12 +10,18 @@ import { BuildComponent } from '../../build/build.component';
 })
 export class ContactInfoComponent implements OnInit {
 
-  constructor(private buildComponent: BuildComponent) { }
+  contactInfoForm = new FormGroup({
+    mobilenumber: new FormControl(''),
+    address: new FormControl(''),
+  });
+
+  constructor(private buildComponent: BuildComponent, private transferDataService: TransferDataService) { }
 
   ngOnInit() {
   }
 
   continue() {
     this.buildComponent.okTick.contactInfo = true;
+    this.transferDataService.setData(this.contactInfoForm.value);
   }
 }

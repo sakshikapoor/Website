@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BuildComponent } from '../../build/build.component';
+import { TransferDataService } from '../../services/transfer-data.service';
 
 @Component({
   selector: 'app-internships',
@@ -10,7 +11,7 @@ export class InternshipsComponent implements OnInit {
 
   internships: any[] = [];
 
-  constructor(private buildComponent: BuildComponent) { }
+  constructor(private buildComponent: BuildComponent, private transferDataService: TransferDataService) { }
 
   ngOnInit() {
   }
@@ -25,6 +26,7 @@ export class InternshipsComponent implements OnInit {
 
   continue() {
     this.buildComponent.okTick.internships = true;
+    this.transferDataService.setData(this.internships);
   }
 
 }

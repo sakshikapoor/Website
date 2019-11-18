@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BuildComponent } from '../../build/build.component';
+import { TransferDataService } from '../../services/transfer-data.service';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-hobbies',
@@ -8,12 +10,17 @@ import { BuildComponent } from '../../build/build.component';
 })
 export class HobbiesComponent implements OnInit {
 
-  constructor(private buildComponent: BuildComponent) { }
+  hobbiesForm = new FormGroup({
+    hobbiesContent: new FormControl(''),
+  });
+
+  constructor(private buildComponent: BuildComponent, private transferDataService: TransferDataService) { }
 
   ngOnInit() {
   }
 
   continue() {
     this.buildComponent.okTick.hobbies = true;
+    this.transferDataService.setData(this.hobbiesForm.value);
   }
 }

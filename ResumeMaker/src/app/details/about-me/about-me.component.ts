@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BuildComponent } from '../../build/build.component';
-import { CookieService } from 'ngx-cookie-service';
 import { FormControl, FormGroup } from '@angular/forms';
+import { TransferDataService } from '../../services/transfer-data.service';
 
 @Component({
   selector: 'app-about-me',
@@ -14,7 +14,7 @@ export class AboutMeComponent implements OnInit {
     aboutMeContent: new FormControl('')
   });
 
-  constructor(private buildComponent: BuildComponent, private cookie: CookieService) { }
+  constructor(private buildComponent: BuildComponent, private transferDataService: TransferDataService) { }
 
   ngOnInit() {
   }
@@ -23,8 +23,8 @@ export class AboutMeComponent implements OnInit {
     if (this.aboutMeForm.get('aboutMeContent').value === '') {
       alert('please fill in the required contents');
     } else {
-    this.cookie.set('aboutMe', JSON.stringify(this.aboutMeForm.value));
     this.buildComponent.okTick.aboutMe = true;
+    this.transferDataService.setData(this.aboutMeForm.value);
     }
   }
 }

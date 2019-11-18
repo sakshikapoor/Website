@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BuildComponent } from '../../build/build.component';
+import { TransferDataService } from '../../services/transfer-data.service';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-other-accomplishments',
@@ -8,13 +10,19 @@ import { BuildComponent } from '../../build/build.component';
 })
 export class OtherAccomplishmentsComponent implements OnInit {
 
-  constructor(private buildComponent: BuildComponent) { }
+  otherAccomplishmentForm = new FormGroup({
+    otherAccomplishmentContent: new FormControl(''),
+  });
+
+
+  constructor(private buildComponent: BuildComponent, private transferDataService: TransferDataService) { }
 
   ngOnInit() {
   }
 
   continue() {
     this.buildComponent.okTick.otherAccomplishments = true;
+    this.transferDataService.setData(this.otherAccomplishmentForm.value);
   }
 
 }

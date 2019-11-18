@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Tagify} from '@yaireo/tagify';
 import { BuildComponent } from '../../build/build.component';
+import { TransferDataService } from '../../services/transfer-data.service';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-languages',
@@ -9,16 +10,19 @@ import { BuildComponent } from '../../build/build.component';
 })
 export class LanguagesComponent implements OnInit {
 
-  // input = document.querySelector('input[name=basic]');
-  // tagify = new Tagify(this.input);
+  languagesForm = new FormGroup({
+    languagesContent: new FormControl(''),
+  });
 
-  constructor(private buildComponent: BuildComponent) { }
+
+  constructor(private buildComponent: BuildComponent, private transferDataService: TransferDataService) { }
 
   ngOnInit() {
   }
 
   continue() {
     this.buildComponent.okTick.languages = true;
+    this.transferDataService.setData(this.languagesForm.value);
   }
 
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BuildComponent } from '../../build/build.component';
-import { CookieService } from 'ngx-cookie-service';
 import { FormControl, FormGroup } from '@angular/forms';
+import { TransferDataService } from '../../services/transfer-data.service';
 
 @Component({
   selector: 'app-certifications',
@@ -17,7 +17,7 @@ export class CertificationsComponent implements OnInit {
     yearContent: new FormControl(''),
   });
 
-  constructor(private buildComponent: BuildComponent, private cookie: CookieService) { }
+  constructor(private buildComponent: BuildComponent, private transferDataService: TransferDataService) { }
 
   ngOnInit() {
   }
@@ -32,8 +32,8 @@ export class CertificationsComponent implements OnInit {
   }
 
   continue() {
-    this.cookie.set('certifications', JSON.stringify(this.certificationsForm.value));
     this.buildComponent.okTick.certifications = true;
+    this.transferDataService.setData(this.certifications);
   }
 
 }

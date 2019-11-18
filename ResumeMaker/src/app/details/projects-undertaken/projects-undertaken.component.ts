@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BuildComponent } from '../../build/build.component';
+import { TransferDataService } from '../../services/transfer-data.service';
 
 @Component({
   selector: 'app-projects-undertaken',
@@ -10,7 +11,7 @@ export class ProjectsUndertakenComponent implements OnInit {
 
   projects: any[] = [];
 
-  constructor(private buildComponent: BuildComponent) { }
+  constructor(private buildComponent: BuildComponent, private transferDataService: TransferDataService) { }
 
   ngOnInit() {
   }
@@ -25,5 +26,6 @@ export class ProjectsUndertakenComponent implements OnInit {
 
   continue() {
     this.buildComponent.okTick.projectsUndertaken = true;
+    this.transferDataService.setData(this.projects);
   }
 }

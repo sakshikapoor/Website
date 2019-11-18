@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BuildComponent } from '../../build/build.component';
+import { TransferDataService } from '../../services/transfer-data.service';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-softwares',
@@ -8,13 +10,18 @@ import { BuildComponent } from '../../build/build.component';
 })
 export class SoftwaresComponent implements OnInit {
 
-  constructor(private buildComponent: BuildComponent) { }
+  softwaresForm = new FormGroup({
+    softwaresContent: new FormControl(''),
+  });
+
+  constructor(private buildComponent: BuildComponent, private transferDataService: TransferDataService) { }
 
   ngOnInit() {
   }
 
   continue() {
     this.buildComponent.okTick.projectsUndertaken = true;
+    this.transferDataService.setData(this.softwaresForm.value);
   }
 
 }

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BuildComponent } from '../../build/build.component';
+import { TransferDataService } from '../../services/transfer-data.service';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-profile-pic',
@@ -12,7 +14,11 @@ export class ProfilePicComponent implements OnInit {
   imgURL: any;
   message: string;
 
-  constructor(private buildComponent: BuildComponent) { }
+  profilePicForm = new FormGroup({
+    profilePicContent: new FormControl(''),
+  });
+
+  constructor(private buildComponent: BuildComponent, private transferDataService: TransferDataService) { }
 
   ngOnInit() { }
 
@@ -37,6 +43,7 @@ export class ProfilePicComponent implements OnInit {
 
   continue() {
     this.buildComponent.okTick.profilePic = true;
+    this.transferDataService.setData(this.profilePicForm.value);
   }
 
 }

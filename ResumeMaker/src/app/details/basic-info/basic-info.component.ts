@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BuildComponent } from '../../build/build.component';
-import { CookieService } from 'ngx-cookie-service';
 import { FormControl, FormGroup } from '@angular/forms';
+import { TransferDataService } from '../../services/transfer-data.service';
 
 @Component({
   selector: 'app-basic-info',
@@ -16,7 +16,7 @@ export class BasicInfoComponent implements OnInit {
     emailIdContent: new FormControl(''),
   });
 
-  constructor(private buildComponent: BuildComponent, private cookie: CookieService) { }
+  constructor(private buildComponent: BuildComponent, private transferDataService: TransferDataService) { }
 
   ngOnInit() {
   }
@@ -26,8 +26,8 @@ export class BasicInfoComponent implements OnInit {
     this.basicInfoform.get('emailIdContent').value === '') {
       alert('please fill in the required contents');
     } else {
-      this.cookie.set('basicInfo', JSON.stringify(this.basicInfoform.value));
       this.buildComponent.okTick.basicInfo = true;
+      this.transferDataService.setData(this.basicInfoform.value);
     }
   }
 

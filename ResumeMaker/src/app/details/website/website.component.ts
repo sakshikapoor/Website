@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BuildComponent } from '../../build/build.component';
+import { TransferDataService } from '../../services/transfer-data.service';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-website',
@@ -8,12 +10,17 @@ import { BuildComponent } from '../../build/build.component';
 })
 export class WebsiteComponent implements OnInit {
 
-  constructor(private buildComponent: BuildComponent) { }
+  websiteForm = new FormGroup({
+    websiteContent: new FormControl(''),
+  });
+
+  constructor(private buildComponent: BuildComponent, private transferDataService: TransferDataService) { }
 
   ngOnInit() {
   }
 
   continue() {
     this.buildComponent.okTick.website = true;
+    this.transferDataService.setData(this.websiteForm.value);
   }
 }

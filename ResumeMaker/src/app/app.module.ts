@@ -28,6 +28,7 @@ import { WebsiteComponent } from './details/website/website.component';
 import { OtherAccomplishmentsComponent } from './details/other-accomplishments/other-accomplishments.component';
 import { CertificationsComponent } from './details/certifications/certifications.component';
 import { CookieService } from 'ngx-cookie-service';
+import { EditComponent } from './edit/edit.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { CookieService } from 'ngx-cookie-service';
     CareerObjectiveComponent,
     WebsiteComponent,
     OtherAccomplishmentsComponent,
-    CertificationsComponent
+    CertificationsComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,

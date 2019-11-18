@@ -66,7 +66,7 @@ export class BuildComponent implements OnInit {
   };
   dataFed = true;
 
-  constructor(private addContentOptionsService: AddContentOptionsService, cookie: CookieService) {
+  constructor(addContentOptionsService: AddContentOptionsService, cookie: CookieService) {
     console.log('constructor');
     addContentOptionsService.returnOptions().subscribe(
       resumeOptions => this.resumeOptions = resumeOptions);
