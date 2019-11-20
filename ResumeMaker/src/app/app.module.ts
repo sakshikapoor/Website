@@ -29,6 +29,7 @@ import { OtherAccomplishmentsComponent } from './details/other-accomplishments/o
 import { CertificationsComponent } from './details/certifications/certifications.component';
 import { CookieService } from 'ngx-cookie-service';
 import { EditComponent } from './edit/edit.component';
+import { LayoutComponent } from './layout/layout.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { EditComponent } from './edit/edit.component';
     WebsiteComponent,
     OtherAccomplishmentsComponent,
     CertificationsComponent,
-    EditComponent
+    EditComponent,
+    LayoutComponent
   ],
   imports: [
     BrowserModule,

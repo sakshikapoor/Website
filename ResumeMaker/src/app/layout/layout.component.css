@@ -1,0 +1,25 @@
+.radio-style {
+    width: 33%;
+    margin: 20px;
+    display: inline;
+}
+.img-width {
+    max-width: 250px;
+}
+input {
+    visibility:hidden;
+}
+label {
+    cursor: pointer;
+}
+img {
+    cursor: pointer;
+}
+input:checked + label {
+    border: 3px solid lightblue;
+    border-radius: 3px;
+    padding: 10px;
+}
+ul {
+    list-style-type: none;
+  }
