@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-layout',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LayoutComponent implements OnInit {
 
-  constructor() { }
+  constructor(private cookieService: CookieService) { }
 
   ngOnInit() {
+  }
+
+  saveTemplate() {
+    this.cookieService.set('data', 'hh');
   }
 
 }

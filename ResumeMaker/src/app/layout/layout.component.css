@@ -11,15 +11,19 @@ input {
 }
 label {
     cursor: pointer;
+    border: 3px solid #d2d2d2;
+    border-radius: 3px;
+    padding: 10px;
 }
 img {
     cursor: pointer;
 }
 input:checked + label {
-    border: 3px solid lightblue;
+    border: 3px solid lightslategray;
     border-radius: 3px;
     padding: 10px;
 }
+ 
 ul {
     list-style-type: none;
   }
