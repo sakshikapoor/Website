@@ -10,10 +10,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class LanguagesComponent implements OnInit {
 
-  languagesForm = new FormGroup({
-    languagesContent: new FormControl(''),
-  });
-
+  languagesContent: any;
 
   constructor(private buildComponent: BuildComponent, private transferDataService: TransferDataService) { }
 
@@ -22,7 +19,7 @@ export class LanguagesComponent implements OnInit {
 
   continue() {
     this.buildComponent.okTick.languages = true;
-    this.transferDataService.setData(this.languagesForm.value);
+    this.transferDataService.setData(this.languagesContent);
   }
 
 }

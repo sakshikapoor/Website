@@ -1,0 +1,10 @@
+label {
+    width: 40%;
+}
+input {
+    width: 55%;
+}
+.btn-dark {
+    width: auto !important;
+    margin: 10px 0px !important;
+}

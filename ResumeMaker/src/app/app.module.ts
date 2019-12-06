@@ -30,6 +30,8 @@ import { CertificationsComponent } from './details/certifications/certifications
 import { CookieService } from 'ngx-cookie-service';
 import { EditComponent } from './edit/edit.component';
 import { LayoutComponent } from './layout/layout.component';
+import { TagInputModule } from 'ngx-chips';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 
 @NgModule({
   declarations: [
@@ -63,7 +65,9 @@ import { LayoutComponent } from './layout/layout.component';
     AppRoutingModule,
     AlertModule.forRoot(),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TagInputModule,
+    BrowserAnimationsModule,
   ],
   providers: [ CookieService ],
   bootstrap: [AppComponent]

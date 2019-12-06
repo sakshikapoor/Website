@@ -5,7 +5,7 @@
   </div>
   <div class="options"> 
     <label>Job Responsibilities/ Description: </label>
-    <input [(ngModel)]="i.description" name="description">
+    <textarea rows="3" class="form-control" [(ngModel)]="i.description" name="description"></textarea>
   </div>
     <input type="button" class="btn btn-dark" (click)="removeInternships(i)" value="Remove"><br>
 </div><br>

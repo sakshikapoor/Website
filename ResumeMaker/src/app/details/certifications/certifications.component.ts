@@ -11,17 +11,11 @@ import { TransferDataService } from '../../services/transfer-data.service';
 export class CertificationsComponent implements OnInit {
 
   certifications: any[] = [];
-  certificationsForm = new FormGroup({
-    certificationContent: new FormControl(''),
-    companyContent: new FormControl(''),
-    yearContent: new FormControl(''),
-  });
 
   constructor(private buildComponent: BuildComponent, private transferDataService: TransferDataService) { }
 
   ngOnInit() {
   }
-
 
   addCertification() {
     this.certifications.push({});

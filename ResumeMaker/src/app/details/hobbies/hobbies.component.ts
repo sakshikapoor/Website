@@ -10,9 +10,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class HobbiesComponent implements OnInit {
 
-  hobbiesForm = new FormGroup({
-    hobbiesContent: new FormControl(''),
-  });
+  hobbiesContent: any;
 
   constructor(private buildComponent: BuildComponent, private transferDataService: TransferDataService) { }
 
@@ -21,6 +19,6 @@ export class HobbiesComponent implements OnInit {
 
   continue() {
     this.buildComponent.okTick.hobbies = true;
-    this.transferDataService.setData(this.hobbiesForm.value);
+    this.transferDataService.setData(this.hobbiesContent);
   }
 }

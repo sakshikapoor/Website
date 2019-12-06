@@ -7,7 +7,7 @@
           <label>Job Position:</label> 
           <input type="text" [(ngModel)]="work.position" name="jobPosition">
           <label>Job Description:</label> 
-          <input type="text" [(ngModel)]="work.description" name="jobDescription">
+          <textarea rows="3" type="text" class="form-control" [(ngModel)]="work.description" name="jobDescription"></textarea>
         </div>
       <input type="button" class="btn btn-dark" (click)="removeWork(i)" value="Remove">
     </div>

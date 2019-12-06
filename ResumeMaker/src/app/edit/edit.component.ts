@@ -5,11 +5,12 @@ import { CookieService } from 'ngx-cookie-service';
 @Component({
   selector: 'app-edit',
   templateUrl: './edit.component.html',
-  styleUrls: ['./edit.component.css']
+  styleUrls: ['./edit.component.scss']
 })
 export class EditComponent implements OnInit {
 
   data: any[] = [];
+  header: any[] = [];
 
   constructor(transferDataService: TransferDataService,  cookie: CookieService) {
     this.data = transferDataService.getData();
@@ -20,6 +21,10 @@ export class EditComponent implements OnInit {
   }
 
   ngOnInit() {
+    if (this.data) {
+      // if()
+      // this.header.push
+    }
   }
 
 }

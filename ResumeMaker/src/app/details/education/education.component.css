@@ -1,3 +1,9 @@
 label {
     width: 40%;
 }
+input {
+    width: 60%;
+}
+.btn-dark {
+    width: auto !important;
+}
