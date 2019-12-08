@@ -26,6 +26,6 @@ export class WorkExperienceComponent implements OnInit {
 
   continue() {
     this.buildComponent.okTick.workExperience = true;
-    this.transferDataService.setData({experience: this.experience});
+    this.transferDataService.setData('workExperience', this.experience);
   }
 }

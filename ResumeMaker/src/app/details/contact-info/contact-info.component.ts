@@ -22,6 +22,6 @@ export class ContactInfoComponent implements OnInit {
 
   continue() {
     this.buildComponent.okTick.contactInfo = true;
-    this.transferDataService.setData({contactInfo: this.contactInfoForm.value});
+    this.transferDataService.setData('contactInfo', this.contactInfoForm.value);
   }
 }

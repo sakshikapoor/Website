@@ -6,14 +6,13 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class TransferDataService {
 
-  data: any[] = [];
+  data: any = {};
 
   constructor(private cookie: CookieService) { }
 
-  setData(incoming: any) {
-    this.data.push(incoming);
+  setData(key: any, value: any) {
+    this.data[key] = value;
     this.cookie.set('data', JSON.stringify(this.data));
-    console.log(this.data);
   }
 
   getData() {

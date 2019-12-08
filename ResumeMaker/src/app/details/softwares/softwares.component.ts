@@ -21,7 +21,7 @@ export class SoftwaresComponent implements OnInit {
 
   continue() {
     this.buildComponent.okTick.projectsUndertaken = true;
-    this.transferDataService.setData({softwares: this.softwaresForm.value});
+    this.transferDataService.setData('softwares', this.softwaresForm.value);
   }
 
 }

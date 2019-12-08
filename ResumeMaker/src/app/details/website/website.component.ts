@@ -21,6 +21,6 @@ export class WebsiteComponent implements OnInit {
 
   continue() {
     this.buildComponent.okTick.website = true;
-    this.transferDataService.setData({website: this.websiteForm.value});
+    this.transferDataService.setData('website', this.websiteForm.value);
   }
 }

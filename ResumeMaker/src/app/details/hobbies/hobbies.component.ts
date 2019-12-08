@@ -19,6 +19,6 @@ export class HobbiesComponent implements OnInit {
 
   continue() {
     this.buildComponent.okTick.hobbies = true;
-    this.transferDataService.setData({hobbies: this.hobbiesContent});
+    this.transferDataService.setData('hobbies', this.hobbiesContent);
   }
 }

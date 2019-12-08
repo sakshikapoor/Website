@@ -43,7 +43,7 @@ export class ProfilePicComponent implements OnInit {
 
   continue() {
     this.buildComponent.okTick.profilePic = true;
-    this.transferDataService.setData({profilePic: this.profilePicForm.value});
+    this.transferDataService.setData('profilePic', this.profilePicForm.value);
   }
 
 }

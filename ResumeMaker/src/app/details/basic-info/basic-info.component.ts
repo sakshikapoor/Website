@@ -27,7 +27,7 @@ export class BasicInfoComponent implements OnInit {
       alert('please fill in the required contents');
     } else {
       this.buildComponent.okTick.basicInfo = true;
-      this.transferDataService.setData({basicInfo: this.basicInfoform.value});
+      this.transferDataService.setData('basicInfo', this.basicInfoform.value);
     }
   }
 

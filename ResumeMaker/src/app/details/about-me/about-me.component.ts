@@ -24,7 +24,7 @@ export class AboutMeComponent implements OnInit {
       alert('please fill in the required contents');
     } else {
     this.buildComponent.okTick.aboutMe = true;
-    this.transferDataService.setData({aboutMe: this.aboutMeForm.value});
+    this.transferDataService.setData('aboutMe', this.aboutMeForm.value);
     }
   }
 }

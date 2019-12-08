@@ -25,7 +25,7 @@ export class EducationComponent implements OnInit {
   }
 
   continue() {
-    this.transferDataService.setData({education: this.education});
+    this.transferDataService.setData('education', this.education);
     this.buildComponent.okTick.education = true;
   }
 }

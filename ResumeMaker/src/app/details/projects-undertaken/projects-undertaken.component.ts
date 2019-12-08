@@ -26,6 +26,6 @@ export class ProjectsUndertakenComponent implements OnInit {
 
   continue() {
     this.buildComponent.okTick.projectsUndertaken = true;
-    this.transferDataService.setData({projectsUndertaken: this.projects});
+    this.transferDataService.setData('projectsUndertaken', this.projects);
   }
 }
