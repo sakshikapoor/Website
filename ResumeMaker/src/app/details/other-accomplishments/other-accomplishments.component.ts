@@ -22,7 +22,7 @@ export class OtherAccomplishmentsComponent implements OnInit {
 
   continue() {
     this.buildComponent.okTick.otherAccomplishments = true;
-    this.transferDataService.setData(this.otherAccomplishmentForm.value);
+    this.transferDataService.setData({otherAccomplishments: this.otherAccomplishmentForm.value});
   }
 
 }

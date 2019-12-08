@@ -26,7 +26,7 @@ export class InternshipsComponent implements OnInit {
 
   continue() {
     this.buildComponent.okTick.internships = true;
-    this.transferDataService.setData(this.internships);
+    this.transferDataService.setData({internships: this.internships});
   }
 
 }

@@ -24,3 +24,7 @@
     bottom: 10px;
     right: 0px;
 }
+.right-panel {
+    max-height: 500px;
+    overflow: scroll;
+}

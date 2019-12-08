@@ -13,6 +13,7 @@ export class TransferDataService {
   setData(incoming: any) {
     this.data.push(incoming);
     this.cookie.set('data', JSON.stringify(this.data));
+    console.log(this.data);
   }
 
   getData() {

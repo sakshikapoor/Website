@@ -24,7 +24,7 @@ export class CareerObjectiveComponent implements OnInit {
       alert('please fill in the required contents');
     } else {
       this.buildComponent.okTick.careerObjective = true;
-      this.transferDataService.setData(this.careerObjectiveForm.value);
+      this.transferDataService.setData({careerObjective: this.careerObjectiveForm.value});
     }
   }
 }

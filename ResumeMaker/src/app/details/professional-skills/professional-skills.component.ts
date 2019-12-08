@@ -26,6 +26,6 @@ export class ProfessionalSkillsComponent implements OnInit {
 
   continue() {
     this.buildComponent.okTick.professionalSkills = true;
-    this.transferDataService.setData(this.skills);
+    this.transferDataService.setData({professionalSkills: this.skills});
   }
 }

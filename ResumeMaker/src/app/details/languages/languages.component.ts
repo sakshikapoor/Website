@@ -19,7 +19,7 @@ export class LanguagesComponent implements OnInit {
 
   continue() {
     this.buildComponent.okTick.languages = true;
-    this.transferDataService.setData(this.languagesContent);
+    this.transferDataService.setData({languages: this.languagesContent});
   }
 
 }

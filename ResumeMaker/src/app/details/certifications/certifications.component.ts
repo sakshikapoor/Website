@@ -27,7 +27,7 @@ export class CertificationsComponent implements OnInit {
 
   continue() {
     this.buildComponent.okTick.certifications = true;
-    this.transferDataService.setData(this.certifications);
+    this.transferDataService.setData({certifications: this.certifications});
   }
 
 }
