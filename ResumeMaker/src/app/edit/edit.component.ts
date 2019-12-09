@@ -9,22 +9,19 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class EditComponent implements OnInit {
 
-  data: any[] = [];
+  data: any = {};
   header: any[] = [];
 
+
   constructor(transferDataService: TransferDataService,  cookie: CookieService) {
-    this.data = transferDataService.getData();
-    if (!this.data) {
-      this.data = JSON.parse(cookie.get('data'));
+      this.data = transferDataService.getData();
+      if (Object.keys(this.data).length === 0) {
+      // this.data = JSON.parse(cookie.get('data'));
+      this.data = JSON.parse(localStorage.getItem('data'));
     }
-    console.log(this.data);
   }
 
   ngOnInit() {
-    if (this.data) {
-      // if()
-      // this.header.push
-    }
   }
 
 }
