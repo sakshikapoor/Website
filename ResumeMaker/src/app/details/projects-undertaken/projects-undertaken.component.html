@@ -3,7 +3,7 @@
     <div *ngFor="let project of projects; let i = index">
       <div>
         Project Name: <input type="text" [(ngModel)]="project.name" name="ProjectName" style="width:70%;"><br>
-        Project Description: <input type="text" [(ngModel)]="project.desc" name="ProjectDesc" style="width:350px;height:100px;">
+        Project Description: <textarea class="form-control" rows="3" [(ngModel)]="project.desc" name="ProjectDesc" style="width:350px;"></textarea>
       </div>
     <input type="button" class="btn btn-dark" (click)="removeProject(i)" value="Remove">
   </div>
