@@ -1,8 +1,11 @@
 <div class="container-box">
   <div class="container-page">
     <div class="header">
-      <div class="name" [(colorPicker)]="color" [style.color]="color">{{data.basicInfo?.firstNameContent | uppercase}} {{data.basicInfo?.lastNameContent | uppercase}}<br></div>
-      {{data.basicInfo?.emailIdContent}}
+      <div class="name" [(colorPicker)]="color" [style.color]="color">{{data.basicInfo?.firstNameContent | uppercase}} {{data.basicInfo?.lastNameContent | uppercase}}<br>
+      <span class="email"> {{data.basicInfo?.emailIdContent}}</span>
+      </div>
+      <span class="mobilenumber" *ngIf="data.contactInfo.mobilenumber">{{data.contactInfo?.mobilenumber}}</span>
+      <span class="address" *ngIf="data.contactInfo.address">{{data.contactInfo?.address}}</span>
     </div>
   </div>
 </div>
