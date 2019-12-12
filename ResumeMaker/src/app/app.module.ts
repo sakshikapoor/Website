@@ -31,7 +31,8 @@ import { CookieService } from 'ngx-cookie-service';
 import { EditComponent } from './edit/edit.component';
 import { LayoutComponent } from './layout/layout.component';
 import { TagInputModule } from 'ngx-chips';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ColorPickerModule } from 'ngx-color-picker';
 
 @NgModule({
   declarations: [
@@ -68,6 +69,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ReactiveFormsModule,
     TagInputModule,
     BrowserAnimationsModule,
+    ColorPickerModule
   ],
   providers: [ CookieService ],
   bootstrap: [AppComponent]

@@ -1,7 +1,7 @@
 <div class="container-box">
   <div class="container-page">
     <div class="header">
-      <div class="name">{{data.basicInfo?.firstNameContent | uppercase}} {{data.basicInfo?.lastNameContent | uppercase}}<br></div>
+      <div class="name" [(colorPicker)]="color" [style.color]="color">{{data.basicInfo?.firstNameContent | uppercase}} {{data.basicInfo?.lastNameContent | uppercase}}<br></div>
       {{data.basicInfo?.emailIdContent}}
     </div>
   </div>
