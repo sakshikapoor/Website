@@ -33,6 +33,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { TagInputModule } from 'ngx-chips';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ColorPickerModule } from 'ngx-color-picker';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,8 @@ import { ColorPickerModule } from 'ngx-color-picker';
     ReactiveFormsModule,
     TagInputModule,
     BrowserAnimationsModule,
-    ColorPickerModule
+    ColorPickerModule,
+    DragDropModule
   ],
   providers: [ CookieService ],
   bootstrap: [AppComponent]

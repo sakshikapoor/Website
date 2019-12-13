@@ -1,11 +1,36 @@
 <div class="container-box">
   <div class="container-page">
-    <div class="header">
+    <div class="header" [(colorPicker)]="bkcolor" [style.backgroundColor]="bkcolor">
       <div class="name" [(colorPicker)]="color" [style.color]="color">{{data.basicInfo?.firstNameContent | uppercase}} {{data.basicInfo?.lastNameContent | uppercase}}<br>
-      <span class="email"> {{data.basicInfo?.emailIdContent}}</span>
+      <span class="email" [style.color]="color"> {{data.basicInfo?.emailIdContent}}</span>
       </div>
-      <span class="mobilenumber" *ngIf="data.contactInfo.mobilenumber">{{data.contactInfo?.mobilenumber}}</span>
-      <span class="address" *ngIf="data.contactInfo.address">{{data.contactInfo?.address}}</span>
+      <span class="mobilenumber" *ngIf="data.contactInfo.mobilenumber" [style.color]="color">{{data.contactInfo?.mobilenumber}}</span>
+      <span class="address" *ngIf="data.contactInfo.address" [style.color]="color">{{data.contactInfo?.address}}</span>
+    </div>
+    <div cdkDropList class="input-list" (cdkDropListDropped)="drop($event)">
+      <div *ngFor="let key of keys" cdkDrag>
+        <div *ngIf="key==='aboutMe'">
+          <div class="input-box">
+            <span class="heading">About me:</span>
+            <span class="details">{{data.aboutMe.aboutMeContent}}</span>
+          </div>
+        </div>
+        <div *ngIf="key==='careerObjective'">
+          <div class="input-box">
+            <span class="heading">Career Objective:</span>
+            <span class="details">{{data.careerObjective.careerObjectiveContent}}</span>
+          </div>
+        </div>
+        <!-- <div *ngIf="key==='basicInfo'">
+          
+        </div>
+        <div *ngIf="key==='basicInfo'">
+          
+        </div>
+        <div *ngIf="key==='basicInfo'">
+          
+        </div> -->
+      </div>
     </div>
   </div>
 </div>

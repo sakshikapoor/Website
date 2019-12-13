@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TransferDataService } from '../services/transfer-data.service';
 import { CookieService } from 'ngx-cookie-service';
+import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-edit',
@@ -11,7 +12,7 @@ export class EditComponent implements OnInit {
 
   data: any = {};
   header: any[] = [];
-
+  keys: any[] = [];
 
   constructor(transferDataService: TransferDataService,  cookie: CookieService) {
       this.data = transferDataService.getData();
@@ -123,9 +124,14 @@ export class EditComponent implements OnInit {
         ]
      };
     }
+      this.keys = Object.keys(this.data);
   }
 
   ngOnInit() {
   }
+
+  drop(event: CdkDragDrop<string[]>) {
+   moveItemInArray(this.keys, event.previousIndex, event.currentIndex);
+ }
 
 }
