@@ -13,6 +13,9 @@ export class EditComponent implements OnInit {
   data: any = {};
   header: any[] = [];
   keys: any[] = [];
+  imagePath;
+  imgURL: any;
+  message: string;
 
   constructor(transferDataService: TransferDataService,  cookie: CookieService) {
       this.data = transferDataService.getData();
@@ -22,10 +25,17 @@ export class EditComponent implements OnInit {
         basicInfo: {
            firstNameContent: 'Sakshi',
            lastNameContent: 'Kapoor',
-           emailIdContent: 'sakshi.kapoor97@gmail.com'
+           emailIdContent: 'sakshi.kapoor97@gmail.com',
+           Github: '/sakshikapoor',
+           Instagram: '/sakshire',
+           Behance: '/sakshire',
+           LinkedIn: '/sakshire'
         },
         aboutMe: {
            aboutMeContent: 'I currently am a web developer at Box8'
+        },
+         careerObjective: {
+           careerObjectiveContent: 'I want a good job'
         },
         profilePic: {
            profilePicContent: 'C:\\fakepath\\IMG_20191210_131427.jpg'
@@ -100,15 +110,13 @@ export class EditComponent implements OnInit {
         professionalSkills: [
            {
               skill: 'Photoshop',
-              rate: 100
+              rate: 70
            },
            {
-              rate: 100
+              skill: 'Illustrator',
+              rate: 85
            }
         ],
-        careerObjective: {
-           careerObjectiveContent: 'want a good job'
-        },
         website: {
            websiteContent: 'www.instagram.com/sakshire'
         },
@@ -118,7 +126,6 @@ export class EditComponent implements OnInit {
         certifications: [
            {
               certification: 'NA',
-              institute: 'NA',
               year: 'NA'
            }
         ]
@@ -129,6 +136,25 @@ export class EditComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  preview(files) {
+   if (files.length === 0) {
+     return;
+   }
+
+   const mimeType = files[0].type;
+   if (mimeType.match(/image\/*/) == null) {
+     this.message = 'Only images are supported.';
+     return;
+   }
+
+   const reader = new FileReader();
+   this.imagePath = files;
+   reader.readAsDataURL(files[0]);
+   reader.onload = (event) => {
+     this.imgURL = reader.result;
+   };
+ }
 
   drop(event: CdkDragDrop<string[]>) {
    moveItemInArray(this.keys, event.previousIndex, event.currentIndex);

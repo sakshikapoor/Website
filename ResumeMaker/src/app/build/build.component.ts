@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AddContentOptionsService } from '../services/add-content-options.service';
 import { ResumeOptions } from '../models/resume-options';
 import { CookieService } from 'ngx-cookie-service';
+import { TransferDataService } from '../services/transfer-data.service';
 
 @Component({
   selector: 'app-build',
@@ -28,7 +29,7 @@ export class BuildComponent implements OnInit {
     website : false,
     workExperience : false,
   };
-  addDetails: ResumeOptions = {
+  addDetails = {
     basicInfo : true,
     aboutMe : false,
     careerObjective : false,
@@ -58,7 +59,7 @@ export class BuildComponent implements OnInit {
     languages : false,
     otherAccomplishments : false,
     professionalSkills : false,
-    profilePic : false,
+    profilePic : true,
     projectsUndertaken : false,
     softwaresKnown : false,
     website : false,
@@ -66,14 +67,18 @@ export class BuildComponent implements OnInit {
   };
   dataFed = true;
 
-  constructor(addContentOptionsService: AddContentOptionsService, cookie: CookieService) {
+  constructor(addContentOptionsService: AddContentOptionsService, cookie: CookieService, transferDataService: TransferDataService) {
     console.log('constructor');
     addContentOptionsService.returnOptions().subscribe(
       resumeOptions => this.resumeOptions = resumeOptions);
+
     if (!this.resumeOptions) {
       this.resumeOptions = JSON.parse(cookie.get('choices'));
       console.log(this.resumeOptions);
     }
+    if (this.resumeOptions.profilePic === true) {
+      transferDataService.setData('profilePic', 'true');
+      }
    }
 
   ngOnInit() {

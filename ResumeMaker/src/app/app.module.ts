@@ -13,7 +13,6 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BasicInfoComponent } from './details/basic-info/basic-info.component';
 import { AboutMeComponent } from './details/about-me/about-me.component';
-import { ProfilePicComponent } from './details/profile-pic/profile-pic.component';
 import { EducationComponent } from './details/education/education.component';
 import { ContactInfoComponent } from './details/contact-info/contact-info.component';
 import { ProjectsUndertakenComponent } from './details/projects-undertaken/projects-undertaken.component';
@@ -45,7 +44,6 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     AddContentComponent,
     BasicInfoComponent,
     AboutMeComponent,
-    ProfilePicComponent,
     EducationComponent,
     ContactInfoComponent,
     ProjectsUndertakenComponent,

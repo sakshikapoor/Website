@@ -13,6 +13,7 @@ export class TransferDataService {
   setData(key: any, value: any) {
     this.data[key] = value;
     this.cookie.set('data', JSON.stringify(this.data));
+    console.log('dsds');
   }
 
   getData() {

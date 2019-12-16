@@ -7,8 +7,6 @@
                   <i class="fa fa-check-circle ok-tick" [ngClass]="okTick?.basicInfo?'displayFull':'displayNone'"></i></button>
                 <button type="button" class="list-group-item list-group-item-action" [ngClass]="[resumeOptions?.aboutMe?'displayFull':'displayNone', okTick?.aboutMe?'disabled':'']" (click)="show('aboutMe')">About Me
                   <i class="fa fa-check-circle ok-tick" [ngClass]="okTick?.aboutMe?'displayFull':'displayNone'"></i></button>
-                <button type="button" class="list-group-item list-group-item-action" [ngClass]="[resumeOptions?.profilePic?'displayFull':'displayNone', okTick?.profilePic?'disabled':'' ]" (click)="show('profilePic')">Profile Pic
-                  <i class="fa fa-check-circle ok-tick" [ngClass]="okTick?.profilePic?'displayFull':'displayNone'"></i></button>
                 <button type="button" class="list-group-item list-group-item-action" [ngClass]="[resumeOptions?.education?'displayFull':'displayNone', okTick?.education?'disabled':'' ]" (click)="show('education')">Education
                   <i class="fa fa-check-circle ok-tick" [ngClass]="okTick?.education?'displayFull':'displayNone'"></i></button>
                 <button type="button" class="list-group-item list-group-item-action" [ngClass]="[resumeOptions?.contactInfo?'displayFull':'displayNone', okTick?.contactInfo?'disabled':'' ]" (click)="show('contactInfo')">Contact Info 
@@ -42,7 +40,6 @@
           <div class="jumbotron right-panel">
              <app-basic-info *ngIf="addDetails.basicInfo"></app-basic-info>
              <app-about-me *ngIf="addDetails.aboutMe"></app-about-me>
-             <app-profile-pic *ngIf="addDetails.profilePic"></app-profile-pic>
              <app-education *ngIf="addDetails.education"></app-education>
              <app-contact-info *ngIf="addDetails.contactInfo"></app-contact-info>
              <app-projects-undertaken *ngIf="addDetails.projectsUndertaken"></app-projects-undertaken>

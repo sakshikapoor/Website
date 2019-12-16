@@ -14,6 +14,10 @@ export class BasicInfoComponent implements OnInit {
     firstNameContent: new FormControl(''),
     lastNameContent: new FormControl(''),
     emailIdContent: new FormControl(''),
+    Github: new FormControl(''),
+    Instagram: new FormControl(''),
+    Behance: new FormControl(''),
+    LinkedIn: new FormControl(''),
   });
 
   constructor(private buildComponent: BuildComponent, private transferDataService: TransferDataService) { }
