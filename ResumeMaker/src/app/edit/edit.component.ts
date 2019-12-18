@@ -3,6 +3,7 @@ import { TransferDataService } from '../services/transfer-data.service';
 import { CookieService } from 'ngx-cookie-service';
 import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 
+
 @Component({
   selector: 'app-edit',
   templateUrl: './edit.component.html',
@@ -160,4 +161,7 @@ export class EditComponent implements OnInit {
    moveItemInArray(this.keys, event.previousIndex, event.currentIndex);
  }
 
+   print() {
+      window.print();
+ }
 }

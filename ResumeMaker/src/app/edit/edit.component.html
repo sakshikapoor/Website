@@ -7,7 +7,7 @@
       <input class="header-color-picker" name="headerBackground" [(colorPicker)]="headingColor" [style.background]="headingColor"/>
       <label for="headerBkColor">Description Heading</label>
   </div>
-  <div class="container-page">
+  <div class="container-page" id="print">
     <div class="header" [style.background]="headerBkColor">
       <div class="name" [(colorPicker)]="color" [style.color]="color">{{data.basicInfo?.firstNameContent | uppercase}} {{data.basicInfo?.lastNameContent | uppercase}}<br>
       <span class="email" [style.color]="color"> {{data.basicInfo?.emailIdContent}}</span>
@@ -181,4 +181,5 @@
     </div>
     <div class="footer" [style.background]="headerBkColor"></div>
   </div>
+  <button class="btn btn-dark print" (click)="print()"><i class="fa fa-print" aria-hidden="true"></i> Print</button>
 </div>
