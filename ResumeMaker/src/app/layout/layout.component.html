@@ -1,20 +1,20 @@
 <div class="jumbotron" style="margin: 20px; text-align: center;"><br>
   <h3>Choose the alignment of personal info in your resume</h3>
     <ul>
-        <li class="radio-style">
+        <li class="radio-style" (click)="changeLayout('left')">
             <input type='radio' value='left' checked name='radio' id='radio1'/>
             <label for='radio1'><img src="../../assets/images/Layout-left.jpg" alt="left-align" class="img-width"><br>Left Aligned</label>
         </li>
-        <li class="radio-style">
+        <li class="radio-style" (click)="changeLayout('center')">
             <input type='radio' value='middle' name='radio'  id='radio2'/>
             <label for='radio2'><img src="../../assets/images/Layout-center.jpg" alt="center-align" class="img-width"><br>Centered</label>
         </li>
-        <li class="radio-style" style="float: none">
+        <li class="radio-style" (click)="changeLayout('right')" style="float: none">
             <input type='radio' value='right' name='radio'  id='radio3'/>
             <label for='radio3'><img src="../../assets/images/Layout-right.jpg" alt="right-align" class="img-width"><br>Right Aligned</label>
         </li>
     </ul>
   <div><br>
-    <button type="button" class="btn btn-dark" style="margin: 0px 20px;" (click)="saveTemplate()" routerLink="/edit">Build your resume >
+    <button type="button" class="btn btn-dark" style="margin: 0px 20px;" (click)="saveTemplate()">Build your resume >
   </button></div>
 </div>

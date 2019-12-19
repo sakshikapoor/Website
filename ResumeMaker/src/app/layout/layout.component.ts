@@ -8,13 +8,32 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class LayoutComponent implements OnInit {
 
+  layout = 'left';
+
   constructor(private cookieService: CookieService) { }
 
   ngOnInit() {
   }
 
-  saveTemplate() {
-    this.cookieService.set('data', 'hh');
+  changeLayout(layout: string) {
+    this.layout = layout;
   }
+
+  saveTemplate() {
+    switch (this.layout) {
+      case 'left':
+        return;
+
+      case 'center':
+        window.location.href = '/edit';
+        return;
+
+      case 'right':
+        return;
+
+      default:
+        return;
+    }
+    }
 
 }
