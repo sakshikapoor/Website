@@ -22,6 +22,7 @@ export class LayoutComponent implements OnInit {
   saveTemplate() {
     switch (this.layout) {
       case 'left':
+        window.location.href = '/left-align';
         return;
 
       case 'center':
@@ -29,6 +30,7 @@ export class LayoutComponent implements OnInit {
         return;
 
       case 'right':
+        window.location.href = '/right-align';
         return;
 
       default:

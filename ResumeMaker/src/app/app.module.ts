@@ -33,6 +33,8 @@ import { TagInputModule } from 'ngx-chips';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ColorPickerModule } from 'ngx-color-picker';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { LeftLayoutComponent } from './left-layout/left-layout.component';
+import { RightLayoutComponent } from './right-layout/right-layout.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +60,9 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     OtherAccomplishmentsComponent,
     CertificationsComponent,
     EditComponent,
-    LayoutComponent
+    LayoutComponent,
+    LeftLayoutComponent,
+    RightLayoutComponent
   ],
   imports: [
     BrowserModule,
