@@ -1,0 +1,45 @@
+.container-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #bbe2e6;
+
+    .header-color{   
+      position: absolute;
+      right: 200px;
+      top: 100px;
+
+      .header-color-picker {
+      width: 20px;
+      height: 20px;
+      margin: 0px 10px;
+      border: 1px solid #e8e8e8;
+      border-radius: 10px;
+      cursor: pointer;
+      }
+    }
+
+    .text-color {
+      position: absolute;
+      right: 200px;
+      top: 200px;
+
+      .header-color-picker {
+        width: 20px;
+        height: 20px;
+        margin: 0px 10px;
+        border: 1px solid #e8e8e8;
+        border-radius: 10px;
+        cursor: pointer;
+        }
+    }
+    .container-page {
+        margin: 20px;
+        background-color: white;
+        width: 595px;
+        min-height: 842px;
+        position: relative;
+        border-radius: 5px;
+    }
+}
+
