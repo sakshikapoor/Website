@@ -6,8 +6,9 @@
 
     .header-color{   
       position: absolute;
-      right: 200px;
+      right: 180px;
       top: 100px;
+      
 
       .header-color-picker {
       width: 20px;
@@ -34,12 +35,206 @@
         }
     }
     .container-page {
-        margin: 20px;
+        margin: 20px 20px 0px 20px;
         background-color: white;
         width: 595px;
         min-height: 842px;
         position: relative;
         border-radius: 5px;
+        display: flex;
+        flex-direction: row;
+
+        .left-column {
+          width: 40%;
+          text-align: center;
+          border-right: 1px solid #eaeaea;
+
+          .header {
+            margin-top: 80px;
+            
+            .email {
+              padding: 10px 20px; 
+              font-size: 12px;
+              text-align: left;
+            }
+            .addressbox {
+              text-align: left;
+              padding: 10px 20px;
+              font-size: 12px;
+            }
+          }
+        }
+        .right-column{
+          width: 60%;
+        }
     }
 }
+.profiles {
+  padding: 10px 20px;
+  font-size: 12px;
+  text-align: left;
+}
+.main-heading {
+  font-weight: 700;
+  font-size: 14px;
+  padding-top: 10px;
+  text-align: left;
+  padding-left: 15px;
+}
+.details {
+  font-weight: normal;
+  text-align: left;
+  padding-left: 20px;
+  color: rgba(0, 0, 0, 0.87);
+  display: inline-block;
+  align-items: left;
+  width: 100%;
+  box-sizing: border-box;
+  cursor: move;
+  font-size: 12px;
+  text-align: left;
 
+  .line {
+    width: 100%;
+    text-align: left;
+  }
+  .rating-container {
+    width:100px;
+    height: 5px;
+    background: #e8e8e8;
+    display: inline-block;
+    position: absolute;
+    left: 130px;
+    margin-top: 10px;
+    border-radius: 60px;
+  
+    .rating {
+        height: 5px;
+        border: 0.5px solid #292929;
+        border-radius: 60px;
+        background: black;
+        display: inline-block;
+        position: absolute;
+        z-index: 5;
+    }
+  }
+}
+.tag {
+  border-radius: 10px;
+  margin-right: 10px;
+  margin-top: 5px;
+  display: inline-block;
+  padding: 5px;
+  font-size: 10px;
+  color:  white;
+  background: black;
+  box-shadow: 1px 1px 5px #676565;
+}
+.input-box {
+  padding-left: 20px;
+  color: rgba(0, 0, 0, 0.87);
+  display: inline-block;
+  align-items: left;
+  width: 100%;
+  box-sizing: border-box;
+  cursor: move;
+  background: white;
+  font-size: 14px;
+  text-align: left;
+  .profilePic {
+    height: 80px;
+    width: 80px;
+    padding-left: 80px;
+    top: 15px;
+    background: white;
+    border-radius: 40px;
+    background-image: url('../../assets/images/profile.png');
+    position: absolute;
+    cursor: pointer;
+    background-size: 80px;
+  }
+  .profilePicContent {
+    height: 80px;
+    width: 80px;
+    position: absolute;
+    border-radius: 40px;
+    top: 14px;
+  }
+}
+.name {
+  padding: 30px 20px 10px;
+  font-weight: 600;
+  text-align: right;
+  font-size: 22px;
+  font-family: "Tenor Sans", Charcoal, sans-serif;
+}
+.tag-container {
+  text-align: left;
+  padding-left: 20px;
+}
+.heading {
+  font-weight: 600;
+}
+.details-rt {
+  font-weight: normal;
+  text-align: left;
+  padding-left: 15px;
+  color: rgba(0, 0, 0, 0.87);
+  display: inline-block;
+  align-items: left;
+  cursor: move;
+  font-size: 12px;
+  text-align: left;
+}
+.line-break {
+  height: 10px;
+}
+.major-line-break {
+  height: 20px;
+}
+.print {
+  position: absolute;
+  top: 300px;
+  right: 230px;
+}
+.underline {
+  height: 2px;
+  margin: 0px 10px;
+  background: black;
+}
+.footer {
+  width: 595px;
+  height: 40px;
+  margin: 0px 20px;
+  background: black;
+}
+.print-container {
+  padding: 0px;
+  margin: 0px;
+}
+
+@media print {
+  * {
+    visibility: hidden;
+  }
+  .container-box  {
+    zoom: 200%;
+  }
+  .print-container * {
+    visibility: visible;
+    -webkit-print-color-adjust:exact;
+  }
+  .tag {
+    -webkit-print-color-adjust:exact;
+    -webkit-filter:drop-shadow(1px 1px 5px #676565);
+  }
+  .header-color {
+    display: none;
+  }
+  .text-color {
+    display: none;
+  } 
+  .print {
+    display: none;
+  }
+}

@@ -1,13 +1,228 @@
 <div class="container-box">
   <div class="header-color">
     <input class="header-color-picker" name="headerBackground" [(colorPicker)]="headerBkColor" [style.background]="headerBkColor"/>
-    <label for="headerBkColor">Header Background</label>
+    <label for="headerBkColor">Left Column</label>
   </div>
   <div class="text-color">
       <input class="header-color-picker" name="headerBackground" [(colorPicker)]="headingColor" [style.background]="headingColor"/>
-      <label for="headerBkColor">Description Heading</label>
+      <label for="headerBkColor">Headings</label>
   </div>
-  <div class="container-page" id="print">
-    
+  <div>
+  <div class="print-container">
+  <div class="container-page">
+    <div class="left-column" [style.background]="headerBkColor">
+        <div *ngIf="data.profilePic" > 
+            <div class="input-box" style="height:0px">
+                <input class="profilePic" #file type="file" accept='image/*' (change)="preview(file.files)" />
+                <img [src]="imgURL" class="profilePicContent" *ngIf="imgURL">
+              </div>
+        </div>
+      <div class="header" [(colorPicker)]="color" [style.color]="color" [style.background]="headerBkColor">
+        <div class="email" [style.color]="color"><i class="fa fa-envelope" aria-hidden="true"></i> {{data.basicInfo?.emailIdContent}}</div>
+        <div class="addressbox">
+          <span class="mobilenumber" *ngIf="data.contactInfo?.mobilenumber" [style.color]="color"><i class="fa fa-phone" aria-hidden="true"></i> {{data.contactInfo?.mobilenumber}}</span><br>
+          <span class="address" *ngIf="data.contactInfo?.address" [style.color]="color"><i class="fa fa-home" aria-hidden="true"></i> {{data.contactInfo?.address}}</span>
+        </div>
+        <div cdkDropList class="input-list" (cdkDropListDropped)="drop($event)">
+            <div *ngFor="let key of keys" cdkDrag>
+
+                <div *ngIf="key==='basicInfo'">
+                    <div class="main-heading">PROFILES</div>
+                    <div *ngIf="data.basicInfo.Github != '' || data.basicInfo.LinkedIn != '' || data.basicInfo.Instagram != '' || data.basicInfo.Behance != '' ">
+                      <div class="profiles">
+                          <span class="profileContainer" *ngIf="data.basicInfo.Github != ''">
+                              <i class="fa fa-github icon"></i>
+                              <span class="profile-link"> {{data.basicInfo.Github}}</span>
+                          </span><br>
+                          <span class="profileContainer" *ngIf="data.basicInfo.LinkedIn != ''">
+                              <i class="fa fa-linkedin icon"></i>
+                              <span class="profile-link"> {{data.basicInfo.LinkedIn}}</span>
+                          </span><br>
+                          <span class="profileContainer" *ngIf="data.basicInfo.Instagram != ''">
+                              <i class="fa fa-instagram icon"></i>
+                              <span class="profile-link"> {{data.basicInfo.Instagram}}</span>
+                          </span><br>
+                          <span class="profileContainer" *ngIf="data.basicInfo.Behance != ''">
+                              <i class="fa fa-behance icon"></i>
+                              <span class="profile-link"> {{data.basicInfo.Behance}}</span>
+                          </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div *ngIf="key==='professionalSkills'">
+                      <div class="main-heading">PROFESSIONAL SKILLS</div>
+                      <div *ngFor="let skills of data.professionalSkills">
+                        <div class="details">
+                          <div class="line">
+                              <span [style.color]="color" >{{skills.skill}}</span>
+                              <div class="rating-container">
+                                <div class="rating" [style.background]="headingColor" [ngStyle]="{'width': skills.rate + 'px'}"> </div>
+                              </div>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+
+                  <div *ngIf="key==='hobbies'">
+                      <div class="main-heading">HOBBIES</div>
+                      <div class="tag-container">
+                        <span *ngFor="let hobby of data.hobbies">
+                          <span class="tag" [style.background]="headingColor">{{hobby.value}}</span>
+                        </span>
+                      </div>
+                  </div>
+
+                  <div *ngIf="key==='languages'">
+                      <div class="main-heading">LANGUAGES SPOKEN</div>
+                      <div class="tag-container">
+                        <span *ngFor="let language of data.languages">
+                          <span class="tag" [style.background]="headingColor">{{language.value}}</span>
+                        </span>
+                      </div>
+                  </div>
+
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="right-column">
+
+        <div class="name">{{data.basicInfo?.firstNameContent | uppercase}} {{data.basicInfo?.lastNameContent | uppercase}}</div>
+        <div class="underline" [style.background]="headerBkColor"></div>
+        <div cdkDropList class="input-list" (cdkDropListDropped)="drop($event)">
+            <div *ngFor="let key of keys" cdkDrag>
+
+                <div *ngIf="key==='aboutMe'">
+                    <div class="input-box-rt">
+                      <div class="main-heading" [style.color]="headingColor">ABOUT ME</div>
+                      <span class="details-rt ">{{data.aboutMe.aboutMeContent}}</span>
+                    </div>
+                  </div>
+
+                  <div *ngIf="key==='careerObjective'">
+                      <div class="input-box-rt">
+                        <div class="main-heading" [style.color]="headingColor">CAREER OBJECTIVE</div>
+                        <span class="details-rt">{{data.careerObjective.careerObjectiveContent}}</span>
+                      </div>
+                    </div>
+
+                    <div *ngIf="key==='workExperience'">
+                      <div class="input-box-rt">
+                        <div class="main-heading" [style.color]="headingColor">WORK EXPERIENCE</div>
+                        <div *ngFor="let experience of data.workExperience">
+                          <div class="line-break"></div>
+                          <div class="details-rt">
+                            <div class="line">
+                                <span class="heading">Company:</span>
+                                <span class="details-rt">{{experience.company}}</span>
+                            </div>
+                            <div class="line">
+                              <span class="heading">Job Profile:</span>
+                              <span class="details-rt">{{experience.position}}</span>
+                            </div>
+                            <div class="line">
+                              <span class="heading">Job Desciption:</span>
+                              <span class="details-rt">{{experience.description}}</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div *ngIf="key==='projectsUndertaken'">
+                        <div class="input-box-rt">
+                          <div class="main-heading" [style.color]="headingColor">PROJECTS UNDERTAKEN</div>
+                          <div *ngFor="let project of data.projectsUndertaken">
+                            <div class="line-break"></div>
+                            <div class="details input-box">
+                              <div class="line">
+                                  <span class="heading">Name:</span>
+                                  <span class="details-rt">{{project.name}}</span>
+                              </div>
+                              <div class="line">
+                                <span class="heading">Description:</span>
+                                <span class="details-rt">{{project.desc}}</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+
+                    <div *ngIf="key==='internships'">
+                        <div class="input-box-rt">
+                          <div class="main-heading" [style.color]="headingColor">INTERNSHIPS</div>
+                          <div *ngFor="let internship of data.internships">
+                            <div class="line-break"></div>
+                            <div class="details input-box">
+                              <div class="line">
+                                  <span class="heading">Name:</span>
+                                  <span class="details-rt">{{internship.name}}</span>
+                              </div>
+                              <div class="line">
+                                <span class="heading">Description:</span>
+                                <span class="details-rt">{{internship.description}}</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+
+                    <div *ngIf="key==='education'">
+                        <div class="input-box-rt">
+                          <div class="main-heading" [style.color]="headingColor">EDUCATION</div>
+                          <div *ngFor="let educationData of data.education">
+                            <div class="line-break"></div>
+                            <div class="details-rt input-box">
+                              <div class="line">
+                                  <span class="heading">Name:</span>
+                                  <span class="details-rt">{{educationData.name}}</span>
+                              </div>
+                              <div class="line">
+                                <span class="heading">Specialization:</span>
+                                <span class="details-rt">{{educationData.specialization}}</span>
+                              </div>
+                              <div class="line">
+                                  <span class="heading">Year of Passing:</span>
+                                  <span class="details-rt">{{educationData.year}}</span>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+
+                    <div *ngIf="key==='certifications'">
+                      <div class="input-box-rt">
+                        <div class="main-heading" [style.color]="headingColor">CERTIFICATION</div>
+                        <div *ngFor="let certification of data.certifications">
+                          <div class="line-break"></div>
+                          <div class="details input-box">
+                            <div class="line">
+                                <span class="heading">Name:</span>
+                                <span class="details-rt">{{certification.certification}}</span>
+                            </div>
+                            <div class="line">
+                                <span class="heading">Year:</span>
+                                <span class="details-rt">{{certification.year}}</span>
+                              </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div *ngIf="key==='otherAccomplishments'">
+                        <div>
+                          <div class="main-heading" [style.color]="headingColor">OTHER ACCOMPLISHMENTS</div>
+                          <span class="details-rt">{{data.otherAccomplishments.otherAccomplishmentContent}}</span>
+                        </div>
+                    </div>
+            </div>
+            <div class="major-line-break"></div>
+        </div>
+    </div>
   </div>
+  <div class="footer" [style.background]="headingColor"></div>
+  </div>
+</div>
+  <button class="btn btn-dark print" (click)="print()"><i class="fa fa-print" aria-hidden="true"></i> Print</button>
 </div>
