@@ -1,2 +1,5 @@
 # Website
-Angular Based Website for resume Creation having multiple options of customization
+Angular Based Website for resume creation having multiple options of customization
+Created while learning basics of Angular
+
+
